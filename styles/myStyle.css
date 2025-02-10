@@ -1,0 +1,24 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+.paintWorkSpace{
+    display:flex;
+    min-height:100vh;
+    flex-direction:column;
+    justify-content:top;
+    align-items:center;
+    background: #6577ff;
+}
+.toolWorkSpace{
+    display:flex;
+    width:70%;
+    height:180px;
+    flex-direction:row;
+    justify-content:center;
+    align-items:center;
+    border:2px solid rgb(156, 152, 150);
+    border-radius:10px;
+    background:rgb(225, 226, 233);
+}
