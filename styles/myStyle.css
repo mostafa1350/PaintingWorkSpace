@@ -3,22 +3,78 @@
     padding:0;
     box-sizing:border-box;
 }
+body{
+    background: #6577ff;
+    min-height:100vh;
+}
 .paintWorkSpace{
     display:flex;
-    min-height:100vh;
-    flex-direction:column;
+    margin:10px;    
+    flex-direction:column;    
     justify-content:top;
     align-items:center;
-    background: #6577ff;
 }
-.toolWorkSpace{
+.toolsWorkSpace{
     display:flex;
-    width:70%;
-    height:180px;
+    margin-top:20px;
+    width:80%;
+    height:250px;
     flex-direction:row;
-    justify-content:center;
+    justify-content:left;
     align-items:center;
     border:2px solid rgb(156, 152, 150);
     border-radius:10px;
     background:rgb(225, 226, 233);
+}
+.divShapes{
+    display:flex;      
+    flex-direction:column;    
+    justify-content:top;
+    align-items:center;   
+    height:90%;
+    margin:8px;
+}
+.divulShapes{
+    background:rgba(184, 189, 189, 0.2);
+    border:1px solid rgb(151, 151, 151);
+    border-radius:5px;
+    margin:3px;
+    height:90%;
+}
+.ulShapes .liShapes{
+    margin:4px;
+}
+.ulShapes .liShapesRange{
+    margin-top:10px;
+}
+.divLblShape{
+    /* background:rgb(206, 209, 218); */
+    /* margin:10px; */
+}
+.divLblShape .lblShapes{
+    font:curior;
+    font-size:1.5rem;
+}
+
+/* ======================================= */
+.divUlTools{
+    background:rgba(184, 189, 189, 0.2);
+    border:1px solid rgb(151, 151, 151);
+    border-radius:5px;
+    margin:3px;
+    height:90%;
+}
+
+.divShapes .ulShapes{
+    list-style:none;
+    padding:10px;
+    margin-left:10px;
+}
+
+
+
+.ulTools{
+    list-style:none;
+    padding:10px;
+    margin-left:10px;
 }
