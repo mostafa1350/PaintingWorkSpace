@@ -18,13 +18,13 @@ body{
     display:flex;
     margin-top:20px;
     width:80%;
-    height:250px;
+    height:35%;
     flex-direction:row;
     justify-content:left;
     align-items:center;
     border:2px solid rgb(156, 152, 150);
     border-radius:10px;
-    background:rgb(225, 226, 233);
+    background:rgb(207, 213, 255);
 }
 .divShapes{
     display:flex;      
@@ -55,26 +55,123 @@ body{
     font:curior;
     font-size:1.5rem;
 }
-
-/* ======================================= */
-.divUlTools{
-    background:rgba(184, 189, 189, 0.2);
-    border:1px solid rgb(151, 151, 151);
-    border-radius:5px;
-    margin:3px;
-    height:90%;
-}
-
 .divShapes .ulShapes{
     list-style:none;
     padding:10px;
     margin-left:10px;
 }
 
-
-
-.ulTools{
+/* ======================================= */
+.divTools{
+    display:flex;      
+    flex-direction:column;    
+    justify-content:top;
+    align-items:center;   
+    height:90%;
+    margin:8px;
+}
+.divUlTools{    
+    background:rgba(184, 189, 189, 0.2);
+    border:1px solid rgb(151, 151, 151);
+    border-radius:5px;
+    margin:3px;
+    height:90%;
+}
+.divUlTools .ulTools{
     list-style:none;
     padding:10px;
     margin-left:10px;
 }
+.divLblTools .lblTools{
+    font:curior;
+    font-size:1.5rem;
+}
+/* ======================================= */
+.divLblColors{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:1.5rem;
+}
+.ulColors{
+    display:flex;
+    flex-direction:row;
+    /* justify-content:space-between; */
+    gap:12px;
+    list-style:none;
+}
+.liColors{
+    background: #ff0000;
+    width:25px;
+    height:25px;
+    border-radius:50%;
+    margin-top:15px;
+}
+.liColors:nth-child(1){
+    background:rgb(252, 241, 241);
+    border:1px solid #898989;
+}
+.liColors:nth-child(2){
+    background:rgb(255, 0, 0);
+}
+.liColors:nth-child(3){
+    background:rgb(5, 182, 14);
+}
+.liColors:nth-child(4){
+    background:rgb(55, 0, 255);
+}
+
+/* ===================================== */
+
+.divButtons{
+    display:flex;
+    height:30px;
+    width:350px;
+    margin-left:30px;
+    justify-content:center;
+    align-items:center;
+    gap:20px;
+}
+.btnCanvas{
+    width:200px;
+    font-size:1.15rem;
+    height:40px;
+    background:rgb(185, 237, 247);
+    box-shadow:6px 6px 5px #a1a1a1;
+    border-radius:5px;
+    margin-top:50px;
+}
+.btnSave{
+    width:200px;
+    font-size:1.15rem;
+    height:40px;
+    background:rgb(252, 187, 187);
+    box-shadow:6px 6px 5px #a1a1a1;
+    border-radius:5px;
+    margin-top:50px;
+}
+.btnCanvas:hover{
+    background:rgb(235, 248, 190);
+    cursor:pointer;
+}
+.btnSave:hover{
+    background:rgb(250, 206, 148);
+    cursor:pointer;
+}
+
+/* ======================================= */
+
+.divWorkSpace{
+    display:flex;
+    margin-top:20px;
+    width:80%;
+    height:500px;
+    flex-direction:row;
+    justify-content:center;
+    align-items:center;
+    border:1px solid rgb(156, 152, 150);
+    border-radius:5px;
+    background:rgb(207, 213, 255);
+}
+
+
