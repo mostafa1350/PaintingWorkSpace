@@ -6,7 +6,10 @@
     <link rel="icon" href="icon-imgs/paint-icon.svg" type="image/svg+png+jpeg">
     <link rel="stylesheet" href="styles/myStyle.css">
 
+        <!-- ---- SCRIPT ---- -->
+
     <title>Painting</title>
+    
 </head>
 <body>
     <div class="paintWorkSpace">
@@ -18,27 +21,28 @@
                 <div class="divLblShape">
                     <label for="" class="lblShapes">Shapes</label>
                 </div>
-                <div class="divulShapes">
+                <div class="divUlShapes">
                     <ul class="ulShapes">
-                        <li class="liShapes">
-                            <img src="icon-imgs/rectangle.svg" alt="" class="imgRectangle" width="25" height="25">
+                        <li class="liShapes active" id="imgRectangle">
+                            <img src="icon-imgs/rectangle.svg" alt=""  width="25" height="25">
                             <span class="spanRectangle">Rectangle</span>
                         </li>
-                        <li class="liShapes">
-                            <img src="icon-imgs/circle.svg" alt="" class="imgCircle" width="25" height="25">
+                        <li class="liShapes" id="imgCircle">
+                            <img src="icon-imgs/circle.svg" alt=""  width="25" height="25">
                             <span class="spanRectangle">Circle</span>
                         </li>
-                        <li class="liShapes">
-                            <img src="icon-imgs/triangle.svg" alt="" class="imgTriangle" width="25" height="25">
+                        <li class="liShapes" id="imgTriangle">
+                            <img src="icon-imgs/triangle.svg" alt=""  width="25" height="25">
                             <span class="spanRectangle">Triangle</span>
                         </li>
-                        <li class="liShapes">                                                  
-                            <img src="icon-imgs/fill-color.svg" alt="" class="imgFillColor" width="25" height="25">
-                            <label for="fill-color">Fill Color</label>
-                            <input type="checkbox" id="fill-color">  
+                        <li class="liShapes" id="imgFillColor">                                                  
+                            <img src="icon-imgs/fill-color.svg" alt=""  width="25" height="25">
+                            <span class="spancheckbox">Fill Color</span>
+                            <input type="checkbox" id="fill-color">
+  
                         </li>
-                        <li class="liShapesRange">
-                            <input type="range" id="range-slider">                        
+                        <li class="liShapes liShapesRange" id="range-slider">
+                            <input type="range" >                        
                         </li>
                     </ul>
                 </div>
@@ -53,12 +57,12 @@
 
                 <div class="divUlTools">
                     <ul class="ulTools">
-                        <li class="liTools">
+                        <li class="liTools" id="imgBrush" >
                             <img src="icon-imgs/brush.svg" alt="" class="imgBrush" width="25" height="25">
                             <span class="spanRectangle">Brush</span>
                         </li>
-                        <li class="liTools">
-                            <img src="icon-imgs/eraser.svg" alt="" class="imgRaser" width="25" height="25">
+                        <li class="liTools" id="imgEraser">
+                            <img src="icon-imgs/eraser.svg" alt="" class="imgEraser" width="25" height="25">
                             <span class="spanRectangle">Eraser</span>
                         </li>
                     </ul>
@@ -91,13 +95,15 @@
 
 
         </div>
+
         <div class="divWorkSpace">
             <canvas></canvas>
         </div>
 
     </div>
 
-    <!-- ---- SCRIPT ---- -->
-     <SCript src="js/myJs.js"></SCript>    
+
+    <SCript src="js/myJs.js"></SCript> 
+   
 </body>
 </html>
