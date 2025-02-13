@@ -19,10 +19,10 @@ let pointMouseX , pointMouseY, snapShot;
 window.addEventListener("load",()=>{
     canvas.width=canvas.offsetWidth;
     canvas.height=canvas.offsetHeight;
-    
+    fillCollor.checked = false;    
 });
 
-// ============= CREATE RECTANGLE ================
+// ============= CREATE Shape Function ================
 const drawRectangle = (e)=>{
     if(!fillCollor.checked)
     {
@@ -35,13 +35,14 @@ const drawRectangle = (e)=>{
 const drawCircle = (e)=>{
     ctx.beginPath();
     let radius = Math.sqrt(Math.pow((pointMouseX-e.offsetX),2) + Math.pow((pointMouseY-e.offsetY),2));
-    // if(!fillCollor.checked)
-    // {
-        ctx.arc(pointMouseX ,pointMouseY, radius, 0, 2*Math.PI);
-        ctx.stroke();
 
-    // }
-    // ctx.fillRect(e.offsetX,e.offsetY,pointMouseX - e.offsetX ,pointMouseY - e.offsetY);
+    ctx.arc(pointMouseX ,pointMouseY, radius, 0, 2*Math.PI);
+
+    if(!fillCollor.checked){ctx.stroke();}
+    else{ctx.fill();}    
+}
+
+const drawTriangle = ()=>{
     
 }
 // ===============================================
@@ -71,6 +72,8 @@ const drawing = (e)=>{
         drawRectangle(e);
     }else if(selectedTool === "circle"){
         drawCircle(e);
+    }else{
+        drawTriangle(e);
     }
 
 };
