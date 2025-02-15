@@ -4,7 +4,8 @@ const canvas = document.querySelector("canvas"),
 ctx = canvas.getContext("2d");
 //Select Shapes
 const toolBtns = document.querySelectorAll(".liTool"),
-fillCollor = document.querySelector("#fill-color");
+fillCollor = document.querySelector("#fill-color"),
+sizeSlider = document.querySelector("#range-slider");
 // ========================
 
 let isDrawing = false,
@@ -42,7 +43,17 @@ const drawCircle = (e)=>{
     else{ctx.fill();}    
 }
 
-const drawTriangle = ()=>{
+const drawTriangle = (e)=>{
+    ctx.beginPath();
+    ctx.moveTo(pointMouseX,pointMouseY);
+    ctx.lineTo(e.offsetX, e.offsetY);
+    ctx.lineTo(pointMouseX * 2 - e.offsetX , e.offsetY);
+    ctx.closePath();
+    ctx.stroke();
+    
+    //Condition ...
+    if(!fillCollor.checked){ctx.stroke();}
+    else{ctx.fill();} 
     
 }
 // ===============================================
@@ -87,6 +98,12 @@ toolBtns.forEach(btn => {
     });
 });
 
+// Det for the size of BRUSH ...
+
+sizeSlider.addEventListener("change", ()=> {
+    brushWidth = sizeSlider.value;
+    console.log("SizeSlider = > " + brushWidth);
+});
 canvas.addEventListener("mousedown", startDrawing);
 canvas.addEventListener("mousemove", drawing);
 canvas.addEventListener("mouseup", ()=>isDrawing = false);
