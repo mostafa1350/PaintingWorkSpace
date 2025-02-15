@@ -100,10 +100,14 @@ toolBtns.forEach(btn => {
 
 // Det for the size of BRUSH ...
 
-sizeSlider.addEventListener("change", ()=> {
+sizeSlider.addEventListener("change", (amount)=> {
     brushWidth = sizeSlider.value;
     console.log("SizeSlider = > " + brushWidth);
 });
+
+const showAmount = (amount)=>{
+    document.getElementById("spanAmountSlider").innerHTML = amount;
+}
 canvas.addEventListener("mousedown", startDrawing);
 canvas.addEventListener("mousemove", drawing);
 canvas.addEventListener("mouseup", ()=>isDrawing = false);
