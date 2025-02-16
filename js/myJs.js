@@ -82,7 +82,8 @@ const drawing = (e)=>{
     if(!isDrawing) return;
     ctx.putImageData(snapShot, 0, 0);
 
-    if(selectedTool === "brush"){
+    if(selectedTool === "brush" || selectedTool === "eraser"){
+        ctx.strokeStyle = selectedTool === "eraser" ? "#fff" : colorPicker.value;
         ctx.lineTo(e.offsetX, e.offsetY);//creating Line(by Mouse)
         ctx.stroke(); //fill with color
     }else if(selectedTool === "rectangle"){
