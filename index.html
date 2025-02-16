@@ -22,7 +22,7 @@
                     <label for="" class="lblShapes">Shapes</label>
                 </div>
                 <div class="divUlShapes">
-                    <ul class="ulShapes">
+                    <ul class="ulShapes ulshapeforWidth">
                         <li class="liShapes liTool" id="rectangle">
                             <img src="icon-imgs/rectangle.svg" alt=""  width="25" height="25">
                             <span class="spanRectangle">Rectangle</span>
@@ -42,8 +42,8 @@
   
                         </li>
                         <li class="liShapes liShapesRange">
-                            <input type="range" min="1" max="30" value="5" id="range-slider" onchange="showAmount(this.value)" oninput="showAmount(this.value)">                        
-                            <span id="spanAmountSlider">5</span>
+                            <input type="range" min="1" max="30" value="1" id="range-slider" onchange="showAmount(this.value)" oninput="showAmount(this.value)">                        
+                            <span id="spanAmountSlider">1</span>
                         </li>
                     </ul>
                 </div>
@@ -71,37 +71,15 @@
 
             <!-- ============================ -->
 
-            <!-- <div class="divTools">
-                <div class="divLblTools">
-                    <label for="" class="lblTools">Tools</label>
-                </div>
-
-                <div class="divUlTools">
-                    <ul class="ulTools">
-                        <li class="liTools" id="imgBrush" >
-                            <img src="icon-imgs/brush.svg" alt="" class="imgBrush" width="25" height="25">
-                            <span class="spanRectangle">Brush</span>
-                        </li>
-                        <li class="liTools" id="imgEraser">
-                            <img src="icon-imgs/eraser.svg" alt="" class="imgEraser" width="25" height="25">
-                            <span class="spanRectangle">Eraser</span>
-                        </li>
-                    </ul>
-                </div>
-            </div> -->
-
-            <!-- ============================ -->
-
             <div class="divColors">
                 <div class="divLblColors">
                     <label for="" class="lblColors">Colors</label>
                 </div>
                 <div class="divUlColors">
                     <ul class="ulColors">
-                        <li class="liColors"></li>
-                        <li class="liColors"></li>
-                        <li class="liColors"></li>
-                        <li class="liColors"></li>
+                        <li class="liColors">
+                            <input type="color" id="color-picker" value="#ff45a2">
+                        </li>
                     </ul>
                 </div>
             </div>

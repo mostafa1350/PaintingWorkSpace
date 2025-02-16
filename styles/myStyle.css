@@ -41,6 +41,9 @@ body{
     margin:3px;
     height:90%;
 }
+.ulshapeforWidth{
+    width:220px;
+}
 .divUlShapes .ulShapes .liShapes{
     margin:4px;
     cursor:pointer;
@@ -123,7 +126,7 @@ body{
     background:rgb(5, 182, 14);
 }
 .liColors:nth-child(4){
-    background:rgb(55, 0, 255);
+    background-color:rgb(55, 0, 255);
 }
 
 /* ===================================== */

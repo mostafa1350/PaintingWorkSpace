@@ -5,22 +5,25 @@ ctx = canvas.getContext("2d");
 //Select Shapes
 const toolBtns = document.querySelectorAll(".liTool"),
 fillCollor = document.querySelector("#fill-color"),
-sizeSlider = document.querySelector("#range-slider");
+sizeSlider = document.querySelector("#range-slider"),
+colorPicker = document.querySelector("#color-picker");
 // ========================
 
 let isDrawing = false,
     selectedTool = "brush",
-    brushWidth = 5;
+    selectedColor = "#ff4545",
+    brushWidth = 1;
 
 // =========== Status of X and Y by Mouse ===============
 let pointMouseX , pointMouseY, snapShot;
-// ======================================================
 
+// =============== LOADING ... ==========================
 
 window.addEventListener("load",()=>{
     canvas.width=canvas.offsetWidth;
     canvas.height=canvas.offsetHeight;
     fillCollor.checked = false;    
+    sizeSlider.value = 1;
 });
 
 // ============= CREATE Shape Function ================
@@ -57,7 +60,7 @@ const drawTriangle = (e)=>{
     
 }
 // ===============================================
-
+// =========== START DRAWING =====================
 const startDrawing = (e)=>{
     isDrawing = true;
     console.log("Mouse Down");
@@ -68,6 +71,9 @@ const startDrawing = (e)=>{
 
     ctx.beginPath();
     ctx.lineWidth = brushWidth;
+
+    ctx.strokeStyle = colorPicker.value;
+    ctx.fillCollor= colorPicker.value;
 
     snapShot = ctx.getImageData(0, 0, canvas.width, canvas.height )
 }
@@ -100,14 +106,27 @@ toolBtns.forEach(btn => {
 
 // Det for the size of BRUSH ...
 
-sizeSlider.addEventListener("change", (amount)=> {
+sizeSlider.addEventListener("change", ()=> {
     brushWidth = sizeSlider.value;
     console.log("SizeSlider = > " + brushWidth);
+    // document.getElementById("spanAmountSlider").innerHTML = brushWidth;
+    // document.querySelector("#spanAmountSlider").textContent = sizeSlider.value;
+
 });
 
-const showAmount = (amount)=>{
-    document.getElementById("spanAmountSlider").innerHTML = amount;
+function showAmount(amount){
+    // document.getElementById("spanAmountSlider").textContent = sizeSlider.value;
+    document.querySelector("#spanAmountSlider").textContent = amount;
 }
+
+// colorPicker.addEventListener("change", ()=>{
+//     colorPicker.parentElement.style.background = colorPicker.value;
+//     colorPicker.parentElement.click();
+
+//     console.log("color : " + colorPicker.value);
+
+// });
+
 canvas.addEventListener("mousedown", startDrawing);
 canvas.addEventListener("mousemove", drawing);
 canvas.addEventListener("mouseup", ()=>isDrawing = false);
