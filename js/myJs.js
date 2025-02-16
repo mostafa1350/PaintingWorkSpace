@@ -6,7 +6,9 @@ ctx = canvas.getContext("2d");
 const toolBtns = document.querySelectorAll(".liTool"),
 fillCollor = document.querySelector("#fill-color"),
 sizeSlider = document.querySelector("#range-slider"),
-colorPicker = document.querySelector("#color-picker");
+colorPicker = document.querySelector("#color-picker"),
+clearScreen = document.querySelector(".btnClearScreen"),
+SaveImage = document.querySelector(".btnSave");
 // ========================
 
 let isDrawing = false,
@@ -73,7 +75,8 @@ const startDrawing = (e)=>{
     ctx.lineWidth = brushWidth;
 
     ctx.strokeStyle = colorPicker.value;
-    ctx.fillCollor= colorPicker.value;
+    ctx.fillStyle = colorPicker.value;
+    // ctx.fillCollor= colorPicker.value;
 
     snapShot = ctx.getImageData(0, 0, canvas.width, canvas.height )
 }
@@ -127,6 +130,25 @@ function showAmount(amount){
 //     console.log("color : " + colorPicker.value);
 
 // });
+
+// ==================== CLEAR SCREEN ====================
+clearScreen.addEventListener("click",()=>{
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+});
+SaveImage.addEventListener("click",()=>{
+
+
+    const link = document.createElement("a");
+    link.download = `${Date.now()}.jpg`;
+    link.href = canvas.toDataURL();
+    link.click();
+
+    // ctx.fillStyle = "#fff";
+    // ctx.fillRect (0,0,canvas.width,canvas.height);
+    // ctx.fillStyle = "#000";
+
+});
+// ==================== ============= ====================
 
 canvas.addEventListener("mousedown", startDrawing);
 canvas.addEventListener("mousemove", drawing);
