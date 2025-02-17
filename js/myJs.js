@@ -27,11 +27,11 @@ window.addEventListener("load",()=>{
     fillCollor.checked = false;
     sizeSlider.value = 1;
 
-    // ===================
+    // ========CHANGE SCREEN STYLE =========
     ctx.fillStyle = "#fff";
     ctx.fillRect(0, 0, canvas.width, canvas.height);
     ctx.fillStyle = "#000"; 
-    // ===================
+    // =====================================
 });
 
 // ============= CREATE Shape Function ================
@@ -67,7 +67,6 @@ const drawTriangle = (e)=>{
     else{ctx.fill();} 
     
 }
-// ===============================================
 // =========== START DRAWING =====================
 const startDrawing = (e)=>{
     isDrawing = true;
@@ -114,28 +113,19 @@ toolBtns.forEach(btn => {
     });
 });
 
-// Det for the size of BRUSH ...
+// ====== Det for the size of BRUSH ... =========
 
 sizeSlider.addEventListener("change", ()=> {
     brushWidth = sizeSlider.value;
     console.log("SizeSlider = > " + brushWidth);
-    // document.getElementById("spanAmountSlider").innerHTML = brushWidth;
-    // document.querySelector("#spanAmountSlider").textContent = sizeSlider.value;
 
 });
 
+// ============ SHOW AMOUNT IN SLIDER =============
+
 function showAmount(amount){
-    // document.getElementById("spanAmountSlider").textContent = sizeSlider.value;
     document.querySelector("#spanAmountSlider").textContent = amount;
 }
-
-// colorPicker.addEventListener("change", ()=>{
-//     colorPicker.parentElement.style.background = colorPicker.value;
-//     colorPicker.parentElement.click();
-
-//     console.log("color : " + colorPicker.value);
-
-// });
 
 // ==================== CLEAR & SAVE SCREEN ====================
 clearScreen.addEventListener("click",()=>{
@@ -146,8 +136,6 @@ clearScreen.addEventListener("click",()=>{
     ctx.fillStyle = "#000";
     // ===================
 });
-
-
 
 
 SaveImage.addEventListener("click",()=>{
@@ -162,19 +150,6 @@ SaveImage.addEventListener("click",()=>{
     createLink.click();
     document.body.removeChild(createLink);
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // ==================== ============= ====================
 
