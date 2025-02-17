@@ -22,10 +22,16 @@ let pointMouseX , pointMouseY, snapShot;
 // =============== LOADING ... ==========================
 
 window.addEventListener("load",()=>{
-    canvas.width=canvas.offsetWidth;
-    canvas.height=canvas.offsetHeight;
-    fillCollor.checked = false;    
+    canvas.width = canvas.offsetWidth;
+    canvas.height = canvas.offsetHeight;
+    fillCollor.checked = false;
     sizeSlider.value = 1;
+
+    // ===================
+    ctx.fillStyle = "#fff";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = "#000"; 
+    // ===================
 });
 
 // ============= CREATE Shape Function ================
@@ -131,23 +137,45 @@ function showAmount(amount){
 
 // });
 
-// ==================== CLEAR SCREEN ====================
+// ==================== CLEAR & SAVE SCREEN ====================
 clearScreen.addEventListener("click",()=>{
-    ctx.clearRect(0,0,canvas.width,canvas.height);
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    // ===================
+    ctx.fillStyle = "#fff";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = "#000";
+    // ===================
 });
+
+
+
+
 SaveImage.addEventListener("click",()=>{
+  
+    const createLink = document.createElement("a");    
+    createLink.download = `${Date.now()}.jpeg`;
 
+    console.log(Date.now());
 
-    const link = document.createElement("a");
-    link.download = `${Date.now()}.jpg`;
-    link.href = canvas.toDataURL();
-    link.click();
-
-    // ctx.fillStyle = "#fff";
-    // ctx.fillRect (0,0,canvas.width,canvas.height);
-    // ctx.fillStyle = "#000";
-
+    createLink.href = canvas.toDataURL();
+    document.body.appendChild(createLink);
+    createLink.click();
+    document.body.removeChild(createLink);
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // ==================== ============= ====================
 
 canvas.addEventListener("mousedown", startDrawing);
